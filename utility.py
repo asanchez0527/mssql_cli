@@ -67,16 +67,19 @@ def get_current_platform():
         Get current platform name.
     """
     system = platform.system()
-    arch = platform.architecture()[0]
+    arch = platform.uname()[4]
 
     run_time_id = None
     if system == 'Windows':
-        if arch == '32bit':
-            run_time_id = 'win32'
-        elif arch == '64bit':
+        if arch.upper() == 'AMD64':
             run_time_id = 'win_amd64'
+        elif arch.upper() == 'ARM64':
+            run_time_id = 'win_arm64'
     elif system == 'Darwin':
-        run_time_id = 'macosx_10_11_intel'
+        if arch.upper() == 'AMD64':
+            run_time_id = 'macosx_10_11_12_intel'
+        elif arch.upper() == 'ARM64':
+            run_time_id = 'macosx_12_arm'
     elif system == 'Linux':
         run_time_id = 'manylinux1_x86_64'
 

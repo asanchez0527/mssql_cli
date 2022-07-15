@@ -17,9 +17,11 @@ SQLTOOLSSERVICE_BASE = os.path.join(utility.ROOT_DIR, 'sqltoolsservice/')
 # Supported platform key's must match those in mssqlscript's setup.py.
 SUPPORTED_PLATFORMS = {
     'manylinux1_x86_64': SQLTOOLSSERVICE_BASE + 'manylinux1/' +
-                         'Microsoft.SqlTools.ServiceLayer-rhel-x64-netcoreapp3.1.tar.gz',
+                        'Microsoft.SqlTools.ServiceLayer-rhel-x64-netcoreapp3.1.tar.gz',
     'macosx_10_11_intel': SQLTOOLSSERVICE_BASE + 'macosx_10_11_intel/' +
-                          'Microsoft.SqlTools.ServiceLayer-osx-x64-netcoreapp3.1.tar.gz',
+                        'Microsoft.SqlTools.ServiceLayer-osx-x64-netcoreapp3.1.tar.gz',
+    'macosx_12_arm': SQLTOOLSSERVICE_BASE + 'macosx_12_arm/' +
+                        'Microsoft.SqlTools.ServiceLayer-osx-arm64-net6.0.tar.gz',
     'win_amd64': SQLTOOLSSERVICE_BASE + 'win_amd64/' +
                  'Microsoft.SqlTools.ServiceLayer-win-x64-netcoreapp3.1.zip',
     'win32': SQLTOOLSSERVICE_BASE + 'win32/' +
